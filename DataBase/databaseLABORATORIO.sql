@@ -131,8 +131,8 @@ CREATE TABLE detalle_devolucion (
 
 CREATE TABLE permiso (
     id_permiso INT NOT NULL AUTO_INCREMENT,
-    nombre VARCHAR(100) NOT NULL,
-    descripcion VARCHAR(255),
+    nombre_permiso VARCHAR(100) NOT NULL,
+    descripcion_permiso VARCHAR(255),
     CONSTRAINT pk_permiso PRIMARY KEY (id_permiso)
 );
 
