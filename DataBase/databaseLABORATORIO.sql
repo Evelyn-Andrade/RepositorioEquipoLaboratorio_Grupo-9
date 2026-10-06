@@ -100,7 +100,7 @@ CREATE TABLE detalle_prestamo (
 /*dañado, intacto, incompleto, completo*/
 CREATE TABLE estado_condicion_devolucion (
     id_estado_condicion INT NOT NULL AUTO_INCREMENT,
-    nombre VARCHAR(50) NOT NULL,
+    nombre_estado_condicion_devolucion VARCHAR(50) NOT NULL,
     CONSTRAINT pk_estado_condicion PRIMARY KEY (id_estado_condicion)
 );
 
