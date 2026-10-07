@@ -22,12 +22,18 @@ switch ($method){
         break;
 
     case 'POST':
-        $correo = $_POST['correo'] ?? NULL;
+        $id_perfil = $_POST['perfil'] ?? NULL;
+        $carne_usuario = $_POST['carne'] ?? NULL;
+        $nombre_usuario = $_POST['nombre'] ?? NULL;
+        $apellido_usuario = $_POST['apellido'] ?? NULL;
+        $correo_usuario = $_POST['correo'] ?? NULL;
+        $contrasena_usuario = $_POST['contrasena'] ?? NULL; 
+        $activo_usuario = $_POST['activo'] ?? NULL;
         try{
             $user = new M_Usuarios($connection, $response);
             $user->INSERT_USUARIO($_POST);
         } catch (\Throwable $th){
-            $response->error("Error al agregar el usuario: ". $th->getMessage(), 2002, 400);
+            $response->error("Error al agregar el usuario: ". $th->getMessage(), 2002, 401);
         }
         break;
 
@@ -36,16 +42,16 @@ switch ($method){
             $user = new M_Usuarios($connection, $response);
             $user->UPDATE_USUARIO($_PUT);
         } catch (\Throwable $th){
-            $response->error("Error al actualizar el usuario", 2003, 400);
+            $response->error("Error al actualizar el usuario", 2003, 402);
         }
         break;
 
     case 'DELETE':
         try {
             $user = new M_Usuarios($connection, $response);
-            $user->DELETE_USUARIO($_DELETE['id']);
+            $user->DELETE_USUARIO($_DELETE['id_usu']);
         } catch (\Throwable $th){
-            $response->error("Error al eliminar el usuario", 2004, 400);
+            $response->error("Error al eliminar el usuario", 2004, 403);
         }
         break;
 }
