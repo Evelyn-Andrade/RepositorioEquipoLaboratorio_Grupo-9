@@ -189,8 +189,19 @@ let pokemonAleatorio = (max) => {
     return idAleatorio;
 }
 
-let contenedorSegundo = $(".contenedor2");
 let contenedorSeptimo = $(".contenedor7");
 
-pokedex(pokemonAleatorio(100), contenedorSegundo);
 pokedex(pokemonAleatorio(100), contenedorSeptimo);
+
+/*------------------------------------------------------------------CRUD DE USUARIOS------------------------------------------------------------------*/
+
+async function MantenimientoUsuarios(){
+    const respuesta = await fetch("API/Vista/Usuarios/indexUSUARIOS.php");
+    $(".contenedor_usuario").innerHTML = await respuesta.text();
+
+    const script = document.createElement("script");
+    script.src = "API/Vista/Usuarios/scriptUSUARIOS.js";
+    document.body.appendChild(script);
+}
+
+MantenimientoUsuarios();

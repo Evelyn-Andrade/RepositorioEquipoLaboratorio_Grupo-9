@@ -379,6 +379,62 @@ section .wave.wave4 {
     }
 }
 
+.titulo {
+    display: flex;
+    justify-content: center; 
+    font-size: 50px;
+}
+
+.formularios {
+    display: flex;
+    justify-content: center; 
+}
+
+.contenido {
+    /*colocamos unas lineas mas agradables a la vista*/
+    border-collapse: collapse;   
+    margin: 30px auto;        
+    /*y un espaciado adecuado*/   
+    width: 90%;
+}
+
+.contenido th, .contenido td {
+    padding: 10px 15px;         
+    text-align: left;
+}
+
+.contenido th{
+    border-bottom: 1px solid #333; 
+    text-align: center;
+    background: #068988;
+    color: #fff;
+    font-size: 15px;
+}
+
+/*cuando el cursos pase por encima, que cambie de color*/
+.contenido tbody tr:hover {
+    background: #c6f4f4;         
+}
+
+#form {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    gap: 20px;              
+}
+
+.campos input {
+    padding: 12px 14px;      
+    font-size: 15px;         
+    width: 180px;           
+}
+
+.botones button {
+    padding: 12px 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
 @media (max-height: 660px) {
     .barra_lateral .titulo_menu{
         margin-bottom: 5px;
