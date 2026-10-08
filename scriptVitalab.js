@@ -205,3 +205,16 @@ async function MantenimientoUsuarios(){
 }
 
 MantenimientoUsuarios();
+
+/*------------------------------------------------------------------CRUD DE PERMISOS------------------------------------------------------------------*/
+
+async function MantenimientoPermisos(){
+    const respuesta = await fetch("API/Vista/Permisos/indexPERMISOS.php");
+    $(".contenedor_permiso").innerHTML = await respuesta.text();
+
+    const script = document.createElement("script");
+    script.src = "API/Vista/Permisos/scriptPERMISOS.js";
+    document.body.appendChild(script);
+}
+
+MantenimientoPermisos();

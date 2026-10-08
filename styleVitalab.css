@@ -429,6 +429,10 @@ section .wave.wave4 {
     width: 180px;           
 }
 
+#descripcion_permiso {
+    width: 500px;
+}
+
 .botones button {
     padding: 12px 20px;
     font-size: 15px;
